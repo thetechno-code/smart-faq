@@ -1,0 +1,6 @@
+{
+  "name": "Smart FAQ Error Assistant",
+  "description": "Enterprise application for detecting, analyzing, and resolving application errors using advanced OCR, Semantic Search, and automated clustering dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

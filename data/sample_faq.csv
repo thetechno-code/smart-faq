@@ -1,0 +1,6 @@
+layanan,kode_error,deskripsi_error,penyebab,solusi
+Login Service,ERR-1001,Login gagal setelah memasukkan password yang benar,Session expired or invalid token,Logout lalu login ulang dan bersihkan cache browser
+Payment Service,ERR-2001,Transaksi gagal dengan status pending,Timeout pada gateway payment,Coba ulang transaksi setelah 5 menit atau hubungi payment support
+Dashboard Service,ERR-3001,Dashboard tidak memuat data terbaru,Cache stale atau data sync delay,Refresh halaman dan cek status sinkronisasi data
+API Gateway,ERR-4001,API mengembalikan 401 unauthorized,Token expired,Perbarui token melalui auth service
+Reporting Service,ERR-5001,Laporan tidak dapat diunduh,File export limit exceeded,Export dengan filter lebih kecil atau gunakan format CSV
