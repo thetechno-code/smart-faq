@@ -109,6 +109,24 @@ Sistem membatasi hak akses operasional berdasarkan tipe akun:
     ```
     *Aplikasi akan berjalan dan dapat diakses secara lokal melalui browser pada port 3000.*
 
+### 5.3 Vercel Serverless Deployment Notes
+Aplikasi ini mendukung deployment ke **Vercel** menggunakan serverless functions.
+
+#### Langkah Deploy ke Vercel:
+1. Hubungkan repository GitHub proyek ini ke Vercel.
+2. Konfigurasikan **Build & Development Settings** pada Vercel:
+   - **Framework Preset**: Vite (atau Other)
+   - **Build Command**: `vite build`
+   - **Output Directory**: `dist`
+3. Konfigurasikan Environment Variables di Vercel Dashboard:
+   - Tambahkan `GEMINI_API_KEY` jika menggunakan fitur Gemini SDK.
+4. Klik **Deploy**.
+
+> [!WARNING]
+> **Batasan Lingkungan Serverless Vercel:**
+> 1. **Local Subprocess (OCR Python):** Serverless function Node.js di Vercel tidak memiliki runtime Python dan *Tesseract binary* bawaan. Oleh karena itu, pemrosesan OCR gambar kustom (di luar preset 1x1 signatures) yang memicu `ocr_processor.py` secara lokal akan menghasilkan status `unreadable` atau return code failure di serverless Vercel. Fitur ini tetap berfungsi normal di lingkungan lokal Anda.
+> 2. **Database Ephemeral:** Perubahan pada database lokal (`database.json`) yang disimpan melalui panel admin bersifat sementara (ephemeral) dan akan direset ke kondisi awal saat container fungsi serverless dimatikan/recycle oleh Vercel. Untuk persistent database di cloud, disarankan memigrasikan penyimpanan ke database eksternal.
+
 ---
 
 ## 6. Testing & UAT Scenario (Skenario Pengujian Unit)

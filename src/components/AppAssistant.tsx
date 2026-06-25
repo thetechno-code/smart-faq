@@ -760,8 +760,6 @@ export default function AppAssistant() {
                 </div>
               </div>
             )}
- 
-            {/* OCR Extract Preview Panel */}
             {ocrOutput && (
               <div className="space-y-3">
                 <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-3 shadow-inner">
@@ -771,37 +769,11 @@ export default function AppAssistant() {
                   </h4>
                   <div className="space-y-2 text-[11px]">
                     <div>
-                      <span className="text-slate-500 block font-mono uppercase text-[9px] tracking-wide">Layanan:</span>
-                      <span className="text-slate-800 font-bold">{ocrOutput.layanan}</span>
-                    </div>
-                    <div>
-                      <span className="text-slate-500 block font-mono uppercase text-[9px] tracking-wide">Deteksi Kode Error:</span>
-                      <span className="text-rose-600 font-mono font-bold text-xs">{ocrOutput.kode_error || "NULL_CODE"}</span>
-                    </div>
-                    <div>
                       <span className="text-slate-500 block font-mono uppercase text-[9px] tracking-wide">Pesan Detail:</span>
                       <p className="text-slate-700 leading-relaxed font-mono text-[10px] bg-white p-2.5 rounded-lg border border-slate-200 mt-1">{ocrOutput.deskripsi_error}</p>
                     </div>
                   </div>
                 </div>
-
-                {/* Bubble Solusi */}
-                {ocrOutput.saran_cepat && (
-                  <div className="p-4 bg-emerald-50 border border-emerald-100 rounded-2xl shadow-sm relative overflow-hidden transition-all duration-300 hover:shadow-md">
-                    <div className="absolute -right-3 -top-3 w-10 h-10 bg-emerald-100/30 rounded-full blur-sm" />
-                    <div className="flex items-start gap-2.5">
-                      <Sparkles className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5 animate-pulse" />
-                      <div className="space-y-1">
-                        <h5 className="text-[11px] font-bold text-emerald-950 uppercase tracking-wider">
-                          Solusi / Rekomendasi Tindakan
-                        </h5>
-                        <p className="text-xs text-emerald-850 font-medium leading-relaxed">
-                          {ocrOutput.saran_cepat}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             )}
           </div>
