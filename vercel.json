@@ -2,10 +2,7 @@
   "version": 2,
   "functions": {
     "api/index.ts": {
-      "includeFiles": [
-        "ocr_processor.py",
-        "data/database.json"
-      ]
+      "includeFiles": "{ocr_processor.py,data/database.json}"
     }
   },
   "rewrites": [
